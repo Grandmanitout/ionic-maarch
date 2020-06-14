@@ -1,0 +1,13 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title>Rechercher</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<ion-item>
+		<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+		<button ion-button item-right large color="light" (click)="openScanner()">
+  <ion-icon name="qr-scanner"></ion-icon>
+</button>
+	</ion-item>
+</ion-content>

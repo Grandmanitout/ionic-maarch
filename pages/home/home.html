@@ -1,0 +1,62 @@
+<ion-grid style="height:100%;">
+	<ion-row style="flex:none">
+		<ion-col col-12>
+			<ion-card
+				style="background: url(https://images.assetsdelivery.com/compings_v2/nadiinko/nadiinko1904/nadiinko190400105.jpg)">
+				<ion-item style="background:#ffffffc4">
+					<ion-avatar item-start>
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRY5FXw1nLDMZs6fkcQb_5_LCMhlCDREzHo9vSF2ktJvtFSJPny&usqp=CAU">
+          </ion-avatar>
+						<h2>Marty McFly</h2>
+						<p>Service Courrier</p>
+				</ion-item>
+
+				<ion-card-content style="background:#ffffffc4">
+					<p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine...
+						out of a DeLorean?! Whoa. This is heavy.</p>
+				</ion-card-content>
+
+				<ion-row style="background:#fff">
+					<ion-col>
+						<button ion-button icon-start clear small color="secondary">
+        <ion-icon name="people"></ion-icon>
+        <div>4</div>
+      </button>
+					</ion-col>
+					<ion-col align-self-right text-right>
+						<button ion-button icon-start clear small color="danger">
+        <ion-icon name="exit"></ion-icon>
+        <div>Se déconnecter</div>
+      </button>
+					</ion-col>
+				</ion-row>
+			</ion-card>
+		</ion-col>
+	</ion-row>
+	<ion-row style="flex:1">
+		<ion-col col-6>
+			<button ion-button color="primary" style="width:100%;height:100%;" (click)="goTo('basket')">
+          <ion-icon name="basket" class="shortcutIcon"></ion-icon>
+          Mes bannettes
+        </button>
+		</ion-col>
+		<ion-col col-6>
+			<button ion-button color="primary" style="width:100%;height:100%;" disabled>
+          <ion-icon name="contacts" class="shortcutIcon"></ion-icon>
+          Contacts
+        </button>
+		</ion-col>
+		<ion-col col-6>
+			<button ion-button color="primary" style="width:100%;height:100%" (click)="goTo('search')">
+          <ion-icon name="search" class="shortcutIcon"></ion-icon>
+          Rechercher un courrier
+        </button>
+		</ion-col>
+		<ion-col col-6>
+			<button ion-button color="primary" style="width:100%;height:100%" disabled>
+          <ion-icon name="calendar" class="shortcutIcon"></ion-icon>
+          Retard du jour
+        </button>
+		</ion-col>
+	</ion-row>
+</ion-grid>

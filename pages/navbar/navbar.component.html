@@ -1,0 +1,18 @@
+	<ion-content>
+			<ion-item (click)="goTo()">
+				<ion-avatar item-start>
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRY5FXw1nLDMZs6fkcQb_5_LCMhlCDREzHo9vSF2ktJvtFSJPny&usqp=CAU">
+        </ion-avatar>
+					<h2>Alex ORLUC</h2>
+					<p>Pôle Jeunesse et Sport</p>
+			</ion-item>
+      <ion-list>
+      <ion-list-header>
+    Bannettes
+  </ion-list-header>
+		<button  ion-item *ngFor="let basket of baskets">
+			{{basket.label}}
+			<ion-badge item-end>{{basket.count}}</ion-badge>
+		</button>
+    </ion-list>
+	</ion-content>

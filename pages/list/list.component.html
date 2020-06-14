@@ -1,0 +1,53 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title>Courriers à traiter</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+		<ion-refresher-content></ion-refresher-content>
+	</ion-refresher>
+	<ion-list [virtualScroll]="ressources">
+		<ion-item-sliding *virtualItem="let ressource">
+			<ion-item>
+				<ion-label (click)="goToOtherPage()">
+					<ion-badge *ngFor="let folder of ressource.folders">{{folder.label}}</ion-badge>
+					<p>{{ressource.chrono}}</p>
+					<h2>{{ressource.subject}}</h2>
+					<p style="display: flex;align-items: center;">
+						<ion-avatar item-start>
+							<img src="https://maarch.com/wp-content/uploads/2019/05/alex-o.jpg">
+            </ion-avatar>
+							<span style="padding-left:5px;padding-right:5px" *ngFor="let info of ressource.display"><i class="fa {{info.icon}}"></i> {{info.displayValue}}</span>
+					</p>
+				</ion-label>
+				<ion-checkbox color="dark" checked="true" *ngIf="selectMode"></ion-checkbox>
+				<ion-avatar hideWhen="portrait" item-start [style.color]="ressource.priorityColor"
+					style="text-align:center;" *ngIf="!selectMode" (press)="selectMode=!selectMode">
+					<ion-icon name="mail"></ion-icon>
+				</ion-avatar>
+
+			</ion-item>
+			<ion-item-options side="left">
+				<button ion-button color="primary">
+        <ion-icon name="attach"></ion-icon>
+        Pièces jointes
+      </button>
+				<button ion-button color="primary">
+        <ion-icon name="text"></ion-icon>
+        Notes
+      </button>
+				<button ion-button color="primary">
+        <ion-icon name="git-network"></ion-icon>
+        Diffusion
+      </button>
+			</ion-item-options>
+			<ion-item-options side="right" (ionSwipe)="delete($event)">
+				<button ion-button expandable color="danger" (click)="delete(item)">
+        <ion-icon name="trash"></ion-icon>
+        Supprimer
+      </button>
+			</ion-item-options>
+		</ion-item-sliding>
+	</ion-list>
+</ion-content>

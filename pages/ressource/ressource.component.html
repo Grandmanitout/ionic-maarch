@@ -1,0 +1,126 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title>{{resource.chrono}}</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only (click)="openDocument()">
+        <ion-icon name="eye"></ion-icon>
+      </button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<ion-badge item-end color="danger">confidentidel</ion-badge>
+	<ion-badge item-end>confidentidel</ion-badge>
+	<ion-slides pager style="height:auto;">
+		<ion-slide>
+			<ion-card>
+				<ion-item>
+					<ion-avatar item-start>
+						<img src="https://maarch.com/wp-content/uploads/2019/05/alex-o.jpg">
+                      </ion-avatar>
+						<h2>Alex ORLUC</h2>
+						<p>Attributaire</p>
+						<button ion-button icon-only item-end large clear (click)="openDial()">
+            <ion-icon name="call"></ion-icon>
+          </button>
+				</ion-item>
+			</ion-card>
+		</ion-slide>
+    <ion-slide>
+			<ion-card>
+				<ion-item>
+					<ion-avatar item-start>
+						<img src="https://maarch.com/wp-content/uploads/2019/05/damien-b.jpg">
+                      </ion-avatar>
+						<h2>Damien BUREL</h2>
+						<p>En copie</p>
+						<button ion-button icon-only item-end large clear (click)="openDial()">
+            <ion-icon name="call"></ion-icon>
+          </button>
+				</ion-item>
+			</ion-card>
+		</ion-slide>
+	</ion-slides>
+	<ion-grid>
+		<ion-row>
+			<ion-col col-12>
+				<ion-list>
+					<ion-item *ngFor="let field of fields">
+						<ion-label color="primary" floating>{{field}}</ion-label>
+						<ion-input disabled [value]="resource[field]"></ion-input>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-12 col-md-6 col-lg-4>
+				<ion-slides pager>
+					<ion-slide *ngFor="let note of notes">
+						<ion-card style="height :150px;">
+							<ion-item>
+								<ion-avatar item-start>
+									<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRY5FXw1nLDMZs6fkcQb_5_LCMhlCDREzHo9vSF2ktJvtFSJPny&usqp=CAU">
+                      </ion-avatar>
+									<h2>Marty McFly</h2>
+									<p>November 5, 1955</p>
+							</ion-item>
+							<ion-card-content>
+								<p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you
+									built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+							</ion-card-content>
+						</ion-card>
+					</ion-slide>
+				</ion-slides>
+			</ion-col>
+			<ion-col col-12 col-md-6 col-lg-4>
+				<ion-slides pager>
+					<ion-slide *ngFor="let note of notes">
+						<ion-card style="height :150px;display:flex;">
+							<ion-item>
+								<ion-avatar item-start>
+									<img src="https://cdn.iconscout.com/icon/free/png-256/docx-file-14-504256.png">
+                      </ion-avatar>
+									<h2>réponse.docx</h2>
+									<p>Projet de réponse</p>
+									<p>Bernard BLIER</p>
+									<p item-end>gelé</p>
+							</ion-item>
+						</ion-card>
+					</ion-slide>
+				</ion-slides>
+			</ion-col>
+			<ion-col col-12 col-md-6 col-lg-4>
+				<ion-slides pager>
+					<ion-slide *ngFor="let note of notes">
+						<ion-card style="height :150px;display:flex;">
+							<ion-item>
+								<ion-avatar item-start>
+									<img src="https://smartandroid.fr/wp-content/uploads/2019/11/accuse-de-reception7.png">
+                      </ion-avatar>
+									<h2>Mail envoyé</h2>
+									<p>
+										<ion-badge>Pièce(s) attachée(s)</ion-badge>
+									</p>
+									<p>Bernard BLIER</p>
+									<p item-end>24 min.</p>
+							</ion-item>
+						</ion-card>
+					</ion-slide>
+				</ion-slides>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<ion-fab right bottom #fab>
+		<button ion-fab color="primary"><ion-icon name="arrow-dropup"></ion-icon></button>
+		<ion-fab-list side="top">
+			<button ion-fab color="primary" tabBadge="3">
+        <ion-icon name="attach"></ion-icon>
+         <ion-badge color="danger">11</ion-badge>
+      </button>
+			<button ion-fab color="primary" tabBadge="3">
+        <ion-icon name="chatbubbles"></ion-icon>
+         <ion-badge color="danger">2</ion-badge>
+      </button>
+		</ion-fab-list>
+	</ion-fab>
+</ion-content>
